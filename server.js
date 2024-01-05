@@ -1,4 +1,4 @@
-const dotenv = require('dotenv').config();
+const dotenv = require('dotenv');
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -10,6 +10,7 @@ const contactRoute = require('./routes/contactRoute');
 const errorHandler = require('./middleware/errorMiddleware');
 const path = require('path');
 
+dotenv.config();
 //Connect to DB
 mongoose
   .connect(process.env.MONGO_URI)
