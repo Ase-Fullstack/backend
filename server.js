@@ -40,17 +40,12 @@ app.use('/api/users', userRoute);
 app.use('/api/products', productRoute);
 app.use('/api/contactus', contactRoute);
 
-app.use(express.static(path.join(__dirname, 'client/dist')));
-// app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
-
+app.use(express.static(path.join(__dirname, '/frontend/build')));
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'frontend', 'dist', 'index.html'));
+  res.sendFile(path.join(__dirname, 'frontend', 'build', 'index.html'));
 });
 
-// Routes
-app.get('/', (req, res) => {
-  // res.send('Home Page...');
-});
+// app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Error Middleware
 app.use(errorHandler);
