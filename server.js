@@ -31,7 +31,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(
   cors({
-    origin: ['http://localhost:3000', 'https://shopito-app.vercel.app'],
+    origin: ['http://localhost:3000'],
     credentials: true
   })
 );
